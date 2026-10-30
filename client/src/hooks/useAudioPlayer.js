@@ -22,10 +22,13 @@ export function useAudioPlayer(src = MUSIC_META.audioPath) {
   // Initialize single persistent audio element
   useEffect(() => {
     const audio = new Audio();
+    audio.id = 'persistent-global-audio';
     audio.src = src;
     audio.loop = true;
     audio.preload = 'metadata';
+    audio.style.display = 'none';
     audioRef.current = audio;
+    document.body.appendChild(audio);
 
     const handleLoadedMetadata = () => {
       if (audio.duration && !isNaN(audio.duration)) {
@@ -75,6 +78,9 @@ export function useAudioPlayer(src = MUSIC_META.audioPath) {
 
     return () => {
       audio.pause();
+      if (audio.parentNode) {
+        audio.parentNode.removeChild(audio);
+      }
       audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
       audio.removeEventListener('canplay', handleCanPlay);
       audio.removeEventListener('timeupdate', handleTimeUpdate);
