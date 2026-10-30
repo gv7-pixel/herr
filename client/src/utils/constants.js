@@ -32,7 +32,30 @@ export const BIRTHDAY_GREETING_COPY = {
 export const FEATURED_PHOTO_META = {
   caption: 'The ocean was beautiful, but my favourite view was beside me.',
   attribution: '— A little memory of us',
+  src: '/assets/featured/neha-and-me-beach.jpg',
 };
+
+/**
+ * 14 verified gallery memory photographs
+ * Group A: Normal memory photographs (14 items)
+ * Stored in client/public/assets/photos/
+ */
+export const GALLERY_PHOTOS = [
+  { id: 1, src: '/assets/photos/memory01.jpg', alt: 'A special memory with Neha - 01' },
+  { id: 2, src: '/assets/photos/memory02.jpg', alt: 'A special memory with Neha - 02' },
+  { id: 3, src: '/assets/photos/memory03.png', alt: 'A special memory with Neha - 03' },
+  { id: 4, src: '/assets/photos/memory04.jpg', alt: 'A special memory with Neha - 04' },
+  { id: 5, src: '/assets/photos/memory05.jpg', alt: 'A special memory with Neha - 05' },
+  { id: 6, src: '/assets/photos/memory06.png', alt: 'A special memory with Neha - 06' },
+  { id: 7, src: '/assets/photos/memory07.jpg', alt: 'A special memory with Neha - 07' },
+  { id: 8, src: '/assets/photos/memory08.jpg', alt: 'A special memory with Neha - 08' },
+  { id: 9, src: '/assets/photos/memory09.jpg', alt: 'A special memory with Neha - 09' },
+  { id: 10, src: '/assets/photos/memory10.jpeg', alt: 'A special memory with Neha - 10' },
+  { id: 11, src: '/assets/photos/memory11.png', alt: 'A special memory with Neha - 11' },
+  { id: 12, src: '/assets/photos/memory12.jpg', alt: 'A special memory with Neha - 12' },
+  { id: 13, src: '/assets/photos/memory13.jpg', alt: 'A special memory with Neha - 13' },
+  { id: 14, src: '/assets/photos/memory14.jpg', alt: 'A special memory with Neha - 14' },
+];
 
 export const MUSIC_META = {
   title: 'I Wanna Be Yours',
