@@ -77,6 +77,7 @@ export default function MemoriesSection() {
                       src={photo.src}
                       alt={photo.alt}
                       loading="lazy"
+                      decoding="async"
                       className="scrapbook-img"
                     />
                     <div className="scrapbook-hover-overlay" aria-hidden="true">

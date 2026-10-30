@@ -16,7 +16,7 @@ export const getProjectInfo = (req, res) => {
     project: 'herr',
     recipient: 'Neha',
     targetDate: '2026-11-06T00:00:00',
-    phase: 1,
-    status: 'initialized',
+    phase: 7,
+    status: 'completed',
   });
 };

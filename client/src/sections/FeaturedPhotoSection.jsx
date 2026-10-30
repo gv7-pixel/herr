@@ -56,6 +56,7 @@ export default function FeaturedPhotoSection() {
                   alt="Neha and me together by the ocean waves"
                   className="featured-photo-img"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="featured-hover-hint" aria-hidden="true">
                   <span className="featured-hint-badge">View full size</span>
