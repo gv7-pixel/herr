@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './styles/App.css';
 import { useAudioPlayer } from './hooks/useAudioPlayer';
 import AudioBar from './components/AudioBar';
+import VintageStamp from './components/VintageStamp';
 import EnvelopeIntro from './sections/EnvelopeIntro';
 import CountdownSection from './sections/CountdownSection';
 import MemoriesSection from './sections/MemoriesSection';
@@ -34,12 +34,20 @@ export default function App() {
   return (
     <div className="app-wrapper">
       <header className="app-header">
-        <h1>A Little Something for {RECIPIENT_NAME}</h1>
-        <p>Phase 1 &bull; Architecture & Foundation [Backend: {backendStatus}]</p>
+        <div className="header-inner">
+          <div className="header-stamp-wrapper">
+            <VintageStamp value="06" text="NOV 2026" postmark="HERR &bull; NEHA" />
+          </div>
+          <h1 className="header-title">A Little Something for {RECIPIENT_NAME}</h1>
+          <p className="header-subtitle">A collection of memories, letters & melody</p>
+          <span className="header-status-badge">
+            Vintage Rose &amp; Parchment &bull; API {backendStatus}
+          </span>
+        </div>
       </header>
 
       <main className="main-content" id="main-content">
-        {/* Sequence strictly follows specification: */}
+        {/* Exact Chronological Sequence: */}
         {/* 1. Vintage sealed envelope */}
         <EnvelopeIntro />
 
@@ -62,11 +70,12 @@ export default function App() {
         <FinalEnvelopeSection />
       </main>
 
-      {/* Uninterrupted persistent audio controller */}
+      {/* Persistent audio controller */}
       <AudioBar audioPlayer={audioPlayer} />
 
       <footer className="app-footer">
-        <p>&hearts; Crafted for {RECIPIENT_NAME} &bull; November 6, 2026</p>
+        <p className="footer-love-note">Crafted with endless love for {RECIPIENT_NAME}</p>
+        <p className="footer-date">November 6, 2026 &bull; An intimate romantic keepsake</p>
       </footer>
     </div>
   );

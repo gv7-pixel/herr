@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Typography System — Romantic Vintage Hierarchy
+   Styles:
+     A. Handwritten:  Caveat (readable, intimate notes, letters, signatures)
+     B. Elegant Serif: Cormorant Garamond (titles, headings, quotes)
+     C. Readable Body:  Lora & Inter (paragraphs, countdown, UI labels)
+   ========================================================================== */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 5.5vw, var(--text-3xl));
+  font-weight: 600;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 4.5vw, var(--text-2xl));
+}
+
+h3 {
+  font-size: clamp(1.1rem, 3.5vw, var(--text-xl));
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
+  overflow-wrap: break-word;
+}
+
+/* Handwritten intimate notes & signatures */
+.font-handwritten,
+.text-handwritten {
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+  line-height: 1.35;
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  overflow-wrap: break-word;
+}
+
+.handwritten-subtext {
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.15rem, 3.8vw, 1.45rem);
+  color: var(--color-burgundy);
+  line-height: 1.3;
+}
+
+/* Elegant Section Titles & Subtitles */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 4.5vw, 2.25rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+  padding: 0 var(--space-2);
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto var(--space-5) auto;
+  font-style: italic;
+  padding: 0 var(--space-2);
+}
+
+/* Romantic Quotes */
+.romantic-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.5;
+  text-align: center;
+  position: relative;
+  padding: var(--space-3) var(--space-4);
+}
+
+.romantic-quote cite {
+  display: block;
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
+  font-style: normal;
+  color: var(--color-burgundy);
+  margin-top: var(--space-3);
+  letter-spacing: 0.02em;
+}
+
+/* Vintage Tag / Sequence Indicator */
+.vintage-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+  background-color: rgba(var(--rgb-burgundy), 0.08);
+  border: 1px solid rgba(var(--rgb-burgundy), 0.18);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
+/* Small detail notes */
+.vintage-detail-text {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  line-height: 1.4;
+}

@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Global Base & Background Aesthetics — Minimal 1990s Romantic Film
+   Warm Ivory Base (#F5EBDD), subtle paper grain, and soft warm lighting.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--color-ivory);
+  /* 1990s Romantic Film: Soft warm lighting gradient across viewport */
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(255, 250, 242, 0.7) 0%, transparent 75%),
+    radial-gradient(ellipse at 50% 100%, rgba(232, 213, 196, 0.4) 0%, transparent 70%);
+  background-attachment: fixed;
+  line-height: var(--leading-normal);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection Highlight (Burgundy & Ivory) */
+::selection {
+  background-color: var(--color-burgundy);
+  color: var(--color-ivory);
+}
+
+::-moz-selection {
+  background-color: var(--color-burgundy);
+  color: var(--color-ivory);
+}
+
+/* Images and Media */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form Elements */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--color-burgundy);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-burgundy-hover);
+}
+
+/* Focus Visibility Standards */
+:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 3px;
+}
+
+/* Refined Subtle Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--rgb-deep-brown), 0.2);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-ivory);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--rgb-burgundy), 0.4);
+}

@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Design Tokens — Vintage Rose & Parchment Design System
+   Palette:
+     Warm Ivory:        #F5EBDD (Main page background)
+     Antique Beige:     #E8D5C4 (Cards, paper surfaces, secondary backgrounds)
+     Dusty Rose:        #C58F91 (Small highlights, delicate accents)
+     Vintage Burgundy:  #873F4B (Wax seals, primary buttons, emphasis)
+     Deep Brown:        #49352F (Main typography, headings, borders, body text)
+   ========================================================================== */
+
+:root {
+  /* Official 5-Color System */
+  --color-ivory: #F5EBDD;
+  --color-beige: #E8D5C4;
+  --color-dusty-rose: #C58F91;
+  --color-burgundy: #873F4B;
+  --color-deep-brown: #49352F;
+
+  /* RGB Values for Transparent/Derived Tonal Variations */
+  --rgb-ivory: 245, 235, 221;
+  --rgb-beige: 232, 213, 196;
+  --rgb-dusty-rose: 197, 143, 145;
+  --rgb-burgundy: 135, 63, 75;
+  --rgb-deep-brown: 73, 53, 47;
+
+  /* Semantic Color Application */
+  --bg-app: var(--color-ivory);
+  --bg-surface: var(--color-beige);
+  --bg-surface-translucent: rgba(var(--rgb-beige), 0.88);
+  --bg-paper: #FAF4EB; /* Subtle light parchment tint */
+  --bg-paper-alt: #F2E3D3; /* Slightly deeper parchment tint */
+
+  --text-primary: var(--color-deep-brown);
+  --text-secondary: rgba(var(--rgb-deep-brown), 0.82);
+  --text-muted: rgba(var(--rgb-deep-brown), 0.58);
+  --text-accent: var(--color-burgundy);
+  --text-rose: var(--color-dusty-rose);
+
+  --accent-rose: var(--color-dusty-rose);
+  --accent-burgundy: var(--color-burgundy);
+  --accent-burgundy-hover: #72343F; /* Deeper burgundy for interactive states */
+
+  --border-subtle: rgba(var(--rgb-deep-brown), 0.12);
+  --border-regular: rgba(var(--rgb-deep-brown), 0.22);
+  --border-rose: rgba(var(--rgb-dusty-rose), 0.45);
+  --border-burgundy: rgba(var(--rgb-burgundy), 0.35);
+
+  /* Typography Families */
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-handwritten: "Caveat", "Segoe Script", "Brush Script MT", cursive;
+  --font-body: "Lora", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Typography Scale */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md: 1.125rem;    /* 18px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 1.875rem;   /* 30px */
+  --text-3xl: 2.25rem;    /* 36px */
+  --text-4xl: 2.85rem;    /* 45.6px */
+  --text-display: 3.5rem; /* 56px */
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Border Radii */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* Shadows — Warm, Organic, Diffused Paper Shadows */
+  --shadow-paper-sm: 0 1px 3px rgba(var(--rgb-deep-brown), 0.06), 0 1px 2px rgba(var(--rgb-deep-brown), 0.04);
+  --shadow-paper: 0 4px 14px rgba(var(--rgb-deep-brown), 0.08), 0 1px 3px rgba(var(--rgb-deep-brown), 0.05);
+  --shadow-paper-lg: 0 12px 28px rgba(var(--rgb-deep-brown), 0.1), 0 4px 8px rgba(var(--rgb-deep-brown), 0.04);
+  --shadow-envelope: 0 16px 36px rgba(var(--rgb-deep-brown), 0.12), 0 4px 10px rgba(var(--rgb-deep-brown), 0.06);
+  --shadow-wax-seal: 0 4px 12px rgba(var(--rgb-burgundy), 0.42), inset 0 2px 3px rgba(255, 245, 240, 0.3), inset 0 -2px 4px rgba(45, 15, 20, 0.4);
+
+  /* Animation Timings */
+  --transition-fast: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-gentle: 450ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout Containers */
+  --container-max: 880px;
+  --container-narrow: 640px;
+  --container-wide: 1080px;
+}

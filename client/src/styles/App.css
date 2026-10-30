@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Application Layout & Structural Styles (Phase 1)
-   Mobile-First, Responsive Breakpoints (Phone -> Tablet -> Desktop)
+   Application Layout & Section Styling — Vintage Rose & Parchment
+   Mobile-First Responsive Architecture
    ========================================================================== */
 
 .app-wrapper {
@@ -8,263 +8,363 @@
   flex-direction: column;
   min-height: 100vh;
   position: relative;
+  background-color: var(--color-ivory);
+  overflow-x: hidden;
+  width: 100%;
 }
 
-/* Header & Status */
+/* --------------------------------------------------------------------------
+   App Header & Ambient Intro
+   -------------------------------------------------------------------------- */
 .app-header {
-  padding: 1.5rem 1rem;
+  padding: var(--space-6) var(--space-3) var(--space-4) var(--space-3);
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(var(--rgb-ivory), 0.98) 0%, rgba(var(--rgb-beige), 0.5) 100%);
+  position: relative;
+  width: 100%;
 }
 
-.app-header h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
+.header-inner {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header-stamp-wrapper {
+  margin-bottom: var(--space-3);
+}
+
+.header-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.65rem, 5vw, 2.85rem);
+  font-weight: 500;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
+  margin-bottom: var(--space-1);
+  line-height: 1.2;
 }
 
-.app-header p {
-  font-size: 0.875rem;
-  color: #666666;
-  margin-top: 0.25rem;
+.header-subtitle {
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.2rem, 3.5vw, 1.65rem);
+  color: var(--color-burgundy);
+  margin-top: 0;
+  line-height: 1.3;
 }
 
-/* Main Sections Container */
+.header-status-badge {
+  margin-top: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background-color: rgba(var(--rgb-deep-brown), 0.05);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   Main Content Layout (Mobile-first, 7 Sections)
+   -------------------------------------------------------------------------- */
 .main-content {
   flex: 1;
   width: 100%;
-  max-width: 900px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 1.5rem 1rem 5rem 1rem;
+  padding: var(--space-4) var(--space-3) calc(var(--space-16) + 3.5rem) var(--space-3);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--space-6);
 }
 
-/* Generic Section Container */
+/* Section Card Container */
 .section-container {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-3);
+  box-shadow: var(--shadow-paper);
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-container:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-paper-lg);
 }
 
-.section-badge {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.2rem 0.6rem;
-  border-radius: 9999px;
-  background-color: #f0f0f0;
-  color: #555555;
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #111111;
-}
-
-.section-subtitle {
-  font-size: 0.95rem;
-  color: #555555;
-  margin-bottom: 1rem;
-}
-
-.section-placeholder {
-  background-color: #f9f9f9;
-  border: 1px dashed #cccccc;
-  border-radius: 8px;
-  padding: 1.25rem;
-  font-size: 0.9rem;
-  color: #666666;
-}
-
-/* Countdown Preview */
-.countdown-preview {
-  margin-top: 0.75rem;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #333333;
-}
-
-/* Gallery Grid */
-.gallery-placeholder-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.photo-slot {
-  background-color: #eaeaea;
-  border-radius: 6px;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  color: #777777;
-}
-
-/* Featured Photo Card */
-.featured-card {
+.section-content {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-
-.featured-image-slot {
-  background-color: #eaeaea;
-  border-radius: 8px;
-  aspect-ratio: 16 / 9;
-  display: flex;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.85rem;
-  color: #666666;
+  width: 100%;
 }
 
-.featured-quote {
-  border-left: 3px solid #333333;
-  padding-left: 1rem;
-  font-style: italic;
-  color: #333333;
+/* Decorative Section Corner Accents */
+.section-corner-flourish {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  color: rgba(var(--rgb-dusty-rose), 0.7);
+  user-select: none;
 }
 
-.featured-quote cite {
-  display: block;
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-  color: #777777;
-  font-style: normal;
+/* Section Inner Placeholder Description */
+.section-desc-note {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 580px;
+  margin: 0 auto;
 }
 
-/* Song Card */
-.song-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.song-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.song-artist {
-  font-size: 0.9rem;
-  color: #666666;
-}
-
-.player-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 1.25rem;
-  background-color: #222222;
-  color: #ffffff;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
-}
-
-.player-button:hover {
-  background-color: #000000;
-}
-
-.audio-notice {
-  font-size: 0.8rem;
-  color: #b91c1c;
-  margin-top: 0.5rem;
-}
-
-.playback-note {
-  font-size: 0.8rem;
-  color: #777777;
-}
-
-/* Persistent Audio Bar */
+/* --------------------------------------------------------------------------
+   Persistent Audio Player Controller
+   -------------------------------------------------------------------------- */
 .audio-persistent-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #ffffff;
-  border-top: 1px solid #e0e0e0;
-  padding: 0.75rem 1rem;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  background-color: rgba(var(--rgb-beige), 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(var(--rgb-deep-brown), 0.16);
+  padding: var(--space-2) var(--space-3);
+  box-shadow: 0 -4px 16px rgba(var(--rgb-deep-brown), 0.08);
   z-index: 100;
+  width: 100%;
 }
 
 .audio-bar-content {
-  max-width: 900px;
+  max-width: var(--container-max);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-2);
 }
 
-.audio-toggle-btn {
-  padding: 0.4rem 0.9rem;
-  background-color: #222222;
-  color: #ffffff;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 500;
+.audio-bar-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  flex: 1;
+}
+
+.audio-mini-vinyl {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-burgundy) 35%, var(--color-deep-brown) 100%);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-mini-hole {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-ivory);
+}
+
+.audio-bar-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .audio-bar-title {
-  font-size: 0.85rem;
-  color: #555555;
+  font-family: var(--font-serif);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 130px;
 }
 
-/* Footer */
+.audio-bar-artist {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+
+.audio-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: var(--color-burgundy);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(var(--rgb-ivory), 0.2);
+  box-shadow: 0 2px 5px rgba(var(--rgb-burgundy), 0.3);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 36px;
+}
+
+.audio-toggle-btn:hover {
+  background-color: var(--accent-burgundy-hover);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   App Footer
+   -------------------------------------------------------------------------- */
 .app-footer {
   text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.8rem;
-  color: #888888;
-  border-top: 1px solid #e5e5e5;
-  background-color: #ffffff;
+  padding: var(--space-6) var(--space-4) calc(var(--space-16) + 1.5rem) var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+  background-color: var(--color-ivory);
+  width: 100%;
 }
 
-/* Tablet & Desktop Breakpoints */
-@media (min-width: 640px) {
-  .app-header h1 {
-    font-size: 1.85rem;
-  }
+.footer-love-note {
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  color: var(--color-burgundy);
+  margin-bottom: var(--space-1);
+}
 
-  .gallery-placeholder-grid {
-    grid-template-columns: repeat(3, 1fr);
+.footer-date {
+  font-family: var(--font-serif);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   - 360px: Small Android devices
+   - 390px: Standard mobile & iPhones
+   - 640px: Phablets / Small tablets
+   - 768px: Tablets
+   - 1024px: Laptops
+   - 1440px: Large desktop displays
+   -------------------------------------------------------------------------- */
+
+/* Standard Mobile & iPhones (min-width: 390px) */
+@media (min-width: 390px) {
+  .main-content {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+    gap: var(--space-7);
   }
 
   .section-container {
-    padding: 2rem;
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .audio-bar-title {
+    font-size: var(--text-sm);
+    max-width: 160px;
+  }
+
+  .audio-bar-artist {
+    max-width: 160px;
+  }
+
+  .audio-toggle-btn {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-xs);
+    min-height: 38px;
   }
 }
 
+/* Phablets / Small Tablets (min-width: 640px) */
+@media (min-width: 640px) {
+  .app-header {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-6);
+  }
+
+  .main-content {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+    gap: var(--space-8);
+  }
+
+  .section-container {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .audio-bar-title {
+    max-width: 260px;
+  }
+
+  .audio-bar-artist {
+    max-width: 260px;
+  }
+
+  .audio-toggle-btn {
+    padding: 0.55rem 1.15rem;
+    font-size: var(--text-xs);
+    min-height: 40px;
+  }
+}
+
+/* Tablets (min-width: 768px) */
+@media (min-width: 768px) {
+  .app-header {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-8);
+  }
+
+  .main-content {
+    gap: var(--space-10);
+    padding-top: var(--space-8);
+  }
+
+  .section-container {
+    padding: var(--space-10) var(--space-8);
+  }
+
+  .footer-love-note {
+    font-size: 1.55rem;
+  }
+}
+
+/* Laptops & Desktops (min-width: 1024px) */
 @media (min-width: 1024px) {
   .main-content {
-    padding: 2rem 1.5rem 6rem 1.5rem;
-    gap: 2.5rem;
+    max-width: var(--container-max);
+    gap: var(--space-12);
+  }
+
+  .audio-bar-title {
+    max-width: 400px;
+  }
+}
+
+/* Large Displays (min-width: 1440px) */
+@media (min-width: 1440px) {
+  body {
+    background-size: cover;
   }
 }
