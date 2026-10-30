@@ -10,7 +10,7 @@
 @keyframes fadeInSoft {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -38,12 +38,39 @@
   }
 }
 
-@keyframes sealGlow {
+/* Wax Seal Breaking Animation: Subtle realistic unsealing */
+@keyframes waxSealBreak {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  35% {
+    transform: scale(1.08) rotate(4deg);
+    opacity: 0.95;
+    filter: brightness(1.1);
+    box-shadow: 0 0 16px rgba(var(--rgb-burgundy), 0.6);
+  }
+  70% {
+    transform: scale(0.92) rotate(-3deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.8) rotate(6deg) translateY(6px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* Birthday Celebration Glow Animation */
+@keyframes birthdayGlow {
   0%, 100% {
-    box-shadow: var(--shadow-wax-seal);
+    box-shadow: 0 0 15px rgba(var(--rgb-dusty-rose), 0.3), var(--shadow-paper-lg);
+    border-color: rgba(var(--rgb-burgundy), 0.4);
   }
   50% {
-    box-shadow: 0 6px 16px rgba(var(--rgb-burgundy), 0.55), inset 0 2px 3px rgba(255, 245, 240, 0.4), inset 0 -2px 4px rgba(45, 15, 20, 0.5);
+    box-shadow: 0 0 25px rgba(var(--rgb-burgundy), 0.35), var(--shadow-paper-lg);
+    border-color: var(--color-burgundy);
   }
 }
 
@@ -58,6 +85,10 @@
 
 .anim-vinyl-paused {
   animation-play-state: paused;
+}
+
+.anim-birthday-glow {
+  animation: birthdayGlow 3s ease-in-out infinite;
 }
 
 /* Interactive feedback */

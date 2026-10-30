@@ -31,6 +31,13 @@ export default function App() {
       });
   }, []);
 
+  const handleOpenSurprise = () => {
+    const countdownEl = document.getElementById('section-countdown');
+    if (countdownEl) {
+      countdownEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="app-wrapper">
       <header className="app-header">
@@ -48,25 +55,25 @@ export default function App() {
 
       <main className="main-content" id="main-content">
         {/* Exact Chronological Sequence: */}
-        {/* 1. Vintage sealed envelope */}
-        <EnvelopeIntro />
+        {/* 1. Vintage sealed envelope with interactive unsealing & invitation */}
+        <EnvelopeIntro onOpenSurprise={handleOpenSurprise} />
 
-        {/* 2. Welcome screen + birthday countdown */}
+        {/* 2. Birthday welcome screen + live dynamic countdown (Asia/Kolkata) */}
         <CountdownSection />
 
-        {/* 3. A little collection of memories */}
+        {/* 3. A little collection of memories (5-10 personal photographs architecture) */}
         <MemoriesSection />
 
-        {/* 4. The photograph */}
+        {/* 4. The photograph (featured beach photograph + quotes) */}
         <FeaturedPhotoSection />
 
-        {/* 5. Open when you feel... */}
+        {/* 5. Open when you feel... (interactive letter cards) */}
         <LettersSection />
 
-        {/* 6. Our song */}
+        {/* 6. Our song ("I Wanna Be Yours" by Arctic Monkeys) */}
         <OurSongSection audioPlayer={audioPlayer} />
 
-        {/* 7. Final sealed envelope */}
+        {/* 7. Final sealed envelope (handwritten-style birthday letter) */}
         <FinalEnvelopeSection />
       </main>
 

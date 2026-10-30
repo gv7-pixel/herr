@@ -1,10 +1,33 @@
 /**
  * Core constants for the romantic birthday surprise website
- * Recipient: Neha | Birthday: November 6, 2026
+ * Recipient: Neha | Birthday: November 6, 2026 (Asia/Kolkata)
  */
 
 export const RECIPIENT_NAME = 'Neha';
-export const TARGET_BIRTHDAY = '2026-11-06T00:00:00';
+
+// Asia/Kolkata timezone is UTC+05:30.
+// Target: November 6, 2026 at 12:00 AM (00:00:00 IST)
+export const TARGET_BIRTHDAY_TIMEZONE = 'Asia/Kolkata';
+export const TARGET_BIRTHDAY = '2026-11-06T00:00:00+05:30';
+
+export const INVITATION_COPY = {
+  envelopeLabel: 'A little something for Neha.',
+  greeting: 'Hey Neha...',
+  message: 'Someone has kept a little surprise just for you.',
+  ctaButton: 'Open your surprise',
+  sealHint: 'Tap the wax seal to open',
+};
+
+export const WELCOME_COPY = {
+  headline: 'Welcome to your little world, Neha.',
+  subtext: 'A little collection of memories, moments, music, and everything I wanted to keep just for you.',
+};
+
+export const BIRTHDAY_GREETING_COPY = {
+  headline: 'Happy Birthday, Neha! ♡',
+  subtext: 'Today is all about you.',
+  celebrationNote: 'Every memory, song, and letter in this little world was made to celebrate the wonder of you.',
+};
 
 export const FEATURED_PHOTO_META = {
   caption: 'The ocean was beautiful, but my favourite view was beside me.',
