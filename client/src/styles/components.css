@@ -587,14 +587,14 @@
 
 .final-letter-parchment {
   position: relative;
-  background-color: #FAF4EB;
+  background-color: #FAF5EE;
   background-image: repeating-linear-gradient(
     transparent,
-    transparent 31px,
-    rgba(var(--rgb-deep-brown), 0.06) 31px,
-    rgba(var(--rgb-deep-brown), 0.06) 32px
+    transparent 33px,
+    rgba(var(--rgb-burgundy), 0.07) 33px,
+    rgba(var(--rgb-burgundy), 0.07) 34px
   );
-  border: 1.5px solid rgba(var(--rgb-deep-brown), 0.18);
+  border: 1.5px solid rgba(var(--rgb-deep-brown), 0.2);
   border-radius: var(--radius-sm);
   padding: var(--space-7) var(--space-6) var(--space-6) var(--space-6);
   box-shadow: 0 16px 45px rgba(var(--rgb-deep-brown), 0.16), var(--shadow-paper-lg);
@@ -629,72 +629,84 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(var(--rgb-deep-brown), 0.12);
+  border-bottom: 1px solid rgba(var(--rgb-deep-brown), 0.14);
   padding-bottom: var(--space-2);
   margin-bottom: var(--space-3);
 }
 
 .final-letter-salutation {
-  font-size: clamp(1.4rem, 4vw, 1.85rem);
-  color: var(--color-burgundy);
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.75rem, 4.8vw, 2.35rem);
+  color: #873F4B !important;
+  font-weight: 600;
   margin: 0;
+  line-height: 1.25;
 }
 
 .final-letter-date {
-  font-size: 0.95rem;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
   font-style: italic;
-  color: var(--text-secondary);
+  color: #873F4B !important;
 }
 
 .final-letter-greeting {
-  font-size: clamp(1.3rem, 3.8vw, 1.65rem);
-  color: var(--color-burgundy);
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.5rem, 4.2vw, 2rem);
+  color: #873F4B !important;
+  font-weight: 600;
   margin: 0 0 var(--space-4) 0;
 }
 
 .final-letter-body {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
   margin-bottom: var(--space-5);
 }
 
 .final-letter-paragraph {
-  font-size: clamp(1.2rem, 3.4vw, 1.45rem);
-  line-height: 1.75;
-  color: var(--text-primary);
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.35rem, 3.8vw, 1.65rem);
+  line-height: 1.85;
+  color: #49352F !important;
+  font-weight: 500;
   margin: 0;
 }
 
 .final-letter-signoff {
   margin-top: var(--space-4);
   padding-top: var(--space-3);
-  border-top: 1px dashed rgba(var(--rgb-deep-brown), 0.15);
+  border-top: 1px dashed rgba(var(--rgb-deep-brown), 0.18);
   text-align: right;
 }
 
 .final-letter-closing {
-  font-size: clamp(1.3rem, 3.8vw, 1.65rem);
-  color: var(--color-burgundy);
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.5rem, 4.2vw, 2rem);
+  color: #873F4B !important;
   margin: 0 0 4px 0;
 }
 
 .final-letter-signature {
-  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
-  color: var(--text-primary);
-  font-weight: 600;
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(2rem, 5.5vw, 2.85rem);
+  color: #49352F !important;
+  font-weight: 700;
   margin: 0;
+  display: inline-block;
+  transform: rotate(-1.5deg);
 }
 
 .final-letter-author-name {
   display: block;
   font-family: var(--font-serif);
   font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-burgundy);
+  color: #873F4B;
   opacity: 0.85;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .final-letter-seal-accent {
@@ -766,11 +778,11 @@
 
 .scrapbook-card {
   position: relative;
-  background-color: var(--bg-paper);
-  border: 1px solid rgba(var(--rgb-deep-brown), 0.16);
-  border-radius: var(--radius-sm);
-  padding: 8px 8px 12px 8px;
-  box-shadow: var(--shadow-paper);
+  background-color: #FAF6F0;
+  border: 1px solid rgba(var(--rgb-deep-brown), 0.14);
+  border-radius: 2px;
+  padding: 7px 7px 14px 7px;
+  box-shadow: 0 3px 10px rgba(var(--rgb-deep-brown), 0.08), 0 1px 3px rgba(var(--rgb-deep-brown), 0.05);
   cursor: pointer;
   transform: rotate(var(--card-rotation, 0deg));
   transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
@@ -784,8 +796,8 @@
 
 .scrapbook-card:hover,
 .scrapbook-card:focus-visible {
-  transform: translateY(-4px) rotate(0deg) scale(1.02);
-  box-shadow: var(--shadow-paper-lg);
+  transform: translateY(-3px) rotate(0deg) scale(1.015);
+  box-shadow: 0 8px 22px rgba(var(--rgb-deep-brown), 0.12);
   border-color: rgba(var(--rgb-burgundy), 0.35);
   z-index: 2;
 }
@@ -797,24 +809,24 @@
 
 .scrapbook-tape {
   position: absolute;
-  top: -8px;
+  top: -6px;
   left: 50%;
-  transform: translateX(-50%) rotate(-2deg);
-  width: 44px;
-  height: 14px;
-  background-color: rgba(232, 213, 196, 0.7);
-  border: 1px dashed rgba(var(--rgb-deep-brown), 0.2);
+  transform: translateX(-50%) rotate(-1deg);
+  width: 40px;
+  height: 12px;
+  background-color: rgba(245, 235, 221, 0.75);
+  border: 1px solid rgba(var(--rgb-deep-brown), 0.14);
   border-radius: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   pointer-events: none;
   z-index: 3;
 }
 
 .scrapbook-card-matting {
   width: 100%;
-  background-color: #FAF5ED;
-  border: 1px solid rgba(var(--rgb-deep-brown), 0.1);
-  border-radius: 2px;
+  background-color: #FAF6F0;
+  border: 1px solid rgba(var(--rgb-deep-brown), 0.08);
+  border-radius: 1px;
   overflow: hidden;
 }
 
@@ -835,11 +847,12 @@
   object-fit: cover;
   display: block;
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.3, 1), filter 0.5s ease;
-  filter: contrast(101%) brightness(99%);
+  filter: sepia(0.06) contrast(1.02) brightness(0.99);
 }
 
 .scrapbook-card:hover .scrapbook-img {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  filter: sepia(0.02) contrast(1.03) brightness(1);
 }
 
 .scrapbook-hover-overlay {
@@ -877,7 +890,7 @@
 }
 
 .scrapbook-card-footer {
-  margin-top: 8px;
+  margin-top: 6px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -885,10 +898,12 @@
 }
 
 .scrapbook-number {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-style: italic;
   color: var(--color-burgundy);
-  opacity: 0.85;
+  opacity: 0.82;
 }
 
 /* --------------------------------------------------------------------------
@@ -902,12 +917,12 @@
 
 .featured-photo-frame {
   margin: 0;
-  background: linear-gradient(145deg, #FAF4EB 0%, #EFE1D2 100%);
-  border: 1.5px solid rgba(var(--rgb-deep-brown), 0.22);
-  border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-3) var(--space-4) var(--space-3);
-  box-shadow: 0 16px 45px rgba(var(--rgb-deep-brown), 0.16), var(--shadow-paper-lg);
-  outline: 1px solid rgba(var(--rgb-dusty-rose), 0.35);
+  background: #FAF6F0;
+  border: 1px solid rgba(var(--rgb-deep-brown), 0.18);
+  border-radius: 3px;
+  padding: 10px 10px 16px 10px;
+  box-shadow: 0 8px 26px rgba(var(--rgb-deep-brown), 0.1), var(--shadow-paper-lg);
+  outline: 1px solid rgba(var(--rgb-dusty-rose), 0.3);
   outline-offset: -8px;
   cursor: pointer;
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
@@ -917,8 +932,8 @@
 }
 
 .featured-photo-frame:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 52px rgba(var(--rgb-deep-brown), 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(var(--rgb-deep-brown), 0.15);
 }
 
 .featured-photo-frame:focus-visible {
@@ -927,11 +942,11 @@
 }
 
 .featured-frame-matting {
-  background-color: #FAF5ED;
-  border: 1px solid rgba(var(--rgb-deep-brown), 0.14);
-  border-radius: var(--radius-sm);
-  padding: 6px;
-  box-shadow: inset 0 1px 4px rgba(var(--rgb-deep-brown), 0.08);
+  background-color: #FAF6F0;
+  border: 1px solid rgba(var(--rgb-deep-brown), 0.1);
+  border-radius: 2px;
+  padding: 4px;
+  box-shadow: inset 0 1px 3px rgba(var(--rgb-deep-brown), 0.05);
 }
 
 .featured-img-container {
@@ -940,19 +955,21 @@
   border-radius: 2px;
   overflow: hidden;
   background-color: rgba(var(--rgb-beige), 0.5);
-  box-shadow: 0 2px 8px rgba(var(--rgb-deep-brown), 0.12);
+  box-shadow: 0 2px 6px rgba(var(--rgb-deep-brown), 0.08);
 }
 
 .featured-photo-img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 2px;
-  transition: transform 0.6s ease;
+  border-radius: 1px;
+  transition: transform 0.6s ease, filter 0.6s ease;
+  filter: sepia(0.04) contrast(1.02) brightness(0.99);
 }
 
 .featured-photo-frame:hover .featured-photo-img {
-  transform: scale(1.02);
+  transform: scale(1.015);
+  filter: sepia(0.01) contrast(1.03) brightness(1);
 }
 
 .featured-hover-hint {
@@ -1498,22 +1515,21 @@
 /* Lined Parchment Sheet */
 .letter-parchment-sheet {
   position: relative;
-  background: linear-gradient(160deg, #FAF4EB 0%, #F5E8D8 100%);
-  border: 1.5px solid rgba(var(--rgb-deep-brown), 0.2);
+  background-color: #FAF5EE;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 33px,
+    rgba(var(--rgb-burgundy), 0.08) 33px,
+    rgba(var(--rgb-burgundy), 0.08) 34px
+  );
+  border: 1.5px solid rgba(var(--rgb-deep-brown), 0.22);
   border-radius: var(--radius-md);
   padding: var(--space-6) var(--space-5);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), var(--shadow-paper-lg);
   overflow-y: auto;
   max-height: calc(88vh - 120px);
-  outline: 1px solid rgba(var(--rgb-dusty-rose), 0.4);
+  outline: 1px solid rgba(var(--rgb-dusty-rose), 0.35);
   outline-offset: -7px;
-  /* Faint vintage stationery lines */
-  background-image: repeating-linear-gradient(
-    transparent,
-    transparent 29px,
-    rgba(var(--rgb-deep-brown), 0.06) 29px,
-    rgba(var(--rgb-deep-brown), 0.06) 30px
-  );
 }
 
 .parchment-floral-tape {
@@ -1540,15 +1556,19 @@
 }
 
 .parchment-salutation {
-  font-size: clamp(1.4rem, 4vw, 1.85rem);
-  color: var(--color-burgundy);
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.75rem, 4.8vw, 2.35rem);
+  color: #873F4B !important;
+  font-weight: 600;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .parchment-date {
-  font-size: 1.15rem;
-  color: var(--text-muted);
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  font-style: italic;
+  color: #873F4B !important;
   letter-spacing: 0.04em;
 }
 
@@ -1566,9 +1586,9 @@
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-burgundy);
+  color: #873F4B !important;
   font-weight: 600;
-  background-color: rgba(var(--rgb-burgundy), 0.08);
+  background-color: rgba(135, 63, 75, 0.1);
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-full);
 }
@@ -1576,22 +1596,25 @@
 .prompt-badge-title {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  color: #49352F !important;
 }
 
 .parchment-body {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
   margin-bottom: var(--space-5);
 }
 
 .parchment-paragraph {
-  font-size: clamp(1.2rem, 3.4vw, 1.45rem);
-  line-height: 1.7;
-  color: var(--text-primary);
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.35rem, 3.8vw, 1.62rem);
+  line-height: 1.85;
+  color: #49352F !important;
+  font-weight: 500;
   margin: 0;
+  letter-spacing: 0.01em;
 }
 
 .parchment-footer {
@@ -1624,16 +1647,21 @@
 }
 
 .parchment-closing {
-  font-size: clamp(1.25rem, 3.5vw, 1.55rem);
-  color: var(--color-burgundy);
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.45rem, 4vw, 1.85rem);
+  color: #873F4B !important;
+  font-weight: 600;
   margin: 0 0 2px 0;
 }
 
 .parchment-signature {
-  font-size: clamp(1.35rem, 3.8vw, 1.75rem);
-  color: var(--text-primary);
+  font-family: 'Dancing Script', 'Caveat', cursive;
+  font-size: clamp(1.75rem, 4.8vw, 2.35rem);
+  color: #49352F !important;
+  font-weight: 700;
   margin: 0;
-  font-weight: 600;
+  display: inline-block;
+  transform: rotate(-1deg);
 }
 
 .letter-reader-nav {

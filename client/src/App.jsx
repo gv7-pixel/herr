@@ -13,7 +13,7 @@ import { RECIPIENT_NAME } from './utils/constants';
 
 export default function App() {
   const audioPlayer = useAudioPlayer();
-  const [backendStatus, setBackendStatus] = useState('checking');
+  const [_backendStatus, setBackendStatus] = useState('checking');
 
   useEffect(() => {
     // Verify frontend-backend connectivity
@@ -47,9 +47,6 @@ export default function App() {
           </div>
           <h1 className="header-title">A Little Something for {RECIPIENT_NAME}</h1>
           <p className="header-subtitle">A collection of memories, letters & melody</p>
-          <span className="header-status-badge">
-            Vintage Rose &amp; Parchment &bull; API {backendStatus}
-          </span>
         </div>
       </header>
 

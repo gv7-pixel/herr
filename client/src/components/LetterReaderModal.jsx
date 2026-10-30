@@ -93,7 +93,7 @@ export default function LetterReaderModal({
           </button>
 
           <span className="letter-reader-tag font-serif">
-            ✦ Letter {currentFormatted} of {totalFormatted} ✦
+            Letter {letterIndex + 1} of {totalLetters}
           </span>
 
           <button
@@ -119,7 +119,7 @@ export default function LetterReaderModal({
             <h3 className="parchment-salutation font-handwritten">
               {letter.salutation}
             </h3>
-            <span className="parchment-date font-handwritten">6 Nov 2026</span>
+            <span className="parchment-date font-serif">6 Nov 2026</span>
           </div>
 
           <div className="parchment-prompt-badge">

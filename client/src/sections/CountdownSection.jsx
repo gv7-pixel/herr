@@ -23,11 +23,7 @@ export default function CountdownSection({ testBirthday = false }) {
 
   return (
     <section className="section-container anim-fade-in" id="section-countdown">
-      <span className="section-corner-flourish" aria-hidden="true">✦ 02</span>
-
       <div className="section-content">
-        <span className="vintage-tag">Section 02</span>
-
         {/* STEP 4 — BIRTHDAY WELCOME SCREEN */}
         <h2 className="section-title">{WELCOME_COPY.headline}</h2>
         <p className="section-subtitle">{WELCOME_COPY.subtext}</p>

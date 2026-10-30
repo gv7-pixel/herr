@@ -45,11 +45,8 @@ export default function EnvelopeIntro({ onOpenSurprise }) {
 
   return (
     <section className="section-container anim-fade-in" id="section-envelope-intro">
-      <span className="section-corner-flourish" aria-hidden="true">✦ 01</span>
-
       <div className="section-content">
-        <span className="vintage-tag">Section 01</span>
-        <h2 className="section-title">Vintage Sealed Envelope</h2>
+        <h2 className="section-title">An Invitation for You</h2>
         <p className="handwritten-subtext" style={{ margin: 'var(--space-1) auto var(--space-2) auto' }}>
           "{INVITATION_COPY.envelopeLabel}"
         </p>

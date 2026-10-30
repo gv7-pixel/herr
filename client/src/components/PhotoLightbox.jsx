@@ -117,7 +117,7 @@ export default function PhotoLightbox({
         {/* Header Bar */}
         <div className="lightbox-header">
           <span className="lightbox-counter font-serif">
-            ✦ {currentFormatted} / {totalFormatted} ✦
+            Memory {currentIndex + 1} of {photos.length}
           </span>
           <button
             type="button"

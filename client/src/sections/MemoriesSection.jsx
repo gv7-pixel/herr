@@ -33,10 +33,7 @@ export default function MemoriesSection() {
 
   return (
     <section className="section-container anim-fade-in" id="section-memories">
-      <span className="section-corner-flourish" aria-hidden="true">✦ 03</span>
-
       <div className="section-content">
-        <span className="vintage-tag">Section 03</span>
         <h2 className="section-title">A little collection of memories</h2>
         <p className="section-subtitle">
           Some moments are too special to be forgotten.
@@ -86,9 +83,9 @@ export default function MemoriesSection() {
                   </div>
                 </div>
 
-                {/* Minimal Card Footer with subtle number emblem */}
+                {/* Minimal Card Footer with subtle album caption */}
                 <div className="scrapbook-card-footer">
-                  <span className="scrapbook-number font-serif">✦ {numFormatted} ✦</span>
+                  <span className="scrapbook-number font-serif">Moment {index + 1}</span>
                 </div>
               </article>
             );

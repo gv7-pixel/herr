@@ -56,10 +56,7 @@ export default function FinalEnvelopeSection({ audioPlayer }) {
 
   return (
     <section className="section-container anim-fade-in" id="section-final-envelope">
-      <span className="section-corner-flourish" aria-hidden="true">✦ 07</span>
-
       <div className="section-content">
-        <span className="vintage-tag">Section 07 &bull; {FINAL_LETTER_DATA.envelopeTag}</span>
         <h2 className="section-title">The Final Sealed Envelope</h2>
         <p className="section-subtitle">
           The words saved for the very end, written from the deepest corner of my heart.

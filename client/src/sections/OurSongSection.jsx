@@ -47,10 +47,7 @@ export default function OurSongSection({ audioPlayer }) {
 
   return (
     <section className="section-container anim-fade-in" id="section-our-song">
-      <span className="section-corner-flourish" aria-hidden="true">✦ 06</span>
-
       <div className="section-content">
-        <span className="vintage-tag">Section 06</span>
         <h2 className="section-title">Our Song</h2>
         <p className="section-subtitle">
           The melody that plays quietly in the background of every memory.

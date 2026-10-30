@@ -24,10 +24,7 @@ export default function FeaturedPhotoSection() {
 
   return (
     <section className="section-container anim-fade-in" id="section-featured-photo">
-      <span className="section-corner-flourish" aria-hidden="true">✦ 04</span>
-
       <div className="section-content">
-        <span className="vintage-tag">Section 04</span>
         <h2 className="section-title">The photograph</h2>
         <p className="section-subtitle">A quiet afternoon beside the sea.</p>
         <VintageDivider />

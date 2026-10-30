@@ -33,10 +33,7 @@ export default function LettersSection() {
 
   return (
     <section className="section-container anim-fade-in" id="section-letters">
-      <span className="section-corner-flourish" aria-hidden="true">✦ 05</span>
-
       <div className="section-content">
-        <span className="vintage-tag">Section 05</span>
         <h2 className="section-title">Open when you feel...</h2>
         <p className="section-subtitle">
           Six folded letters sealed with tenderness, awaiting the right moment to be read.
