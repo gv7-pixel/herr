@@ -73,8 +73,8 @@ export default function App() {
         {/* 6. Our song ("I Wanna Be Yours" by Arctic Monkeys) */}
         <OurSongSection audioPlayer={audioPlayer} />
 
-        {/* 7. Final sealed envelope (handwritten-style birthday letter) */}
-        <FinalEnvelopeSection />
+        {/* 7. Final sealed envelope (handwritten-style birthday letter + continuous music prep) */}
+        <FinalEnvelopeSection audioPlayer={audioPlayer} />
       </main>
 
       {/* Persistent audio controller */}

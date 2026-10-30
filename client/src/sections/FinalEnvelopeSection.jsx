@@ -1,7 +1,7 @@
 import React from 'react';
 import WaxSeal from '../components/WaxSeal';
 import VintageDivider from '../components/VintageDivider';
-import { RECIPIENT_NAME } from '../utils/constants';
+import { RECIPIENT_NAME, MUSIC_META } from '../utils/constants';
 
 /**
  * Section 7: Final Sealed Envelope
@@ -9,8 +9,11 @@ import { RECIPIENT_NAME } from '../utils/constants';
  * - Aged-parchment textured envelope with delicate double border
  * - Burgundy wax seal with embossed heart detail
  * - Lined handwritten-style letter presentation designed for heartfelt birthday wishes
+ * - Continuous music companion prepared for Phase 6 reading experience
  */
-export default function FinalEnvelopeSection() {
+export default function FinalEnvelopeSection({ audioPlayer }) {
+  const { isPlaying, togglePlay } = audioPlayer || {};
+
   return (
     <section className="section-container anim-fade-in" id="section-final-envelope">
       <span className="section-corner-flourish" aria-hidden="true">✦ 07</span>
@@ -27,6 +30,34 @@ export default function FinalEnvelopeSection() {
           <div className="envelope-final-card">
             <div className="envelope-seal-container">
               <WaxSeal label={`Unseal final birthday letter for ${RECIPIENT_NAME}`} />
+            </div>
+
+            {/* Subtle Phase 6 Music Companion Control */}
+            <div className="final-letter-audio-hint">
+              {isPlaying ? (
+                <div className="final-audio-status">
+                  <span className="final-audio-pulse" aria-hidden="true">♫</span>
+                  <span className="final-audio-text">Playing softly: {MUSIC_META.title}</span>
+                  <button
+                    type="button"
+                    className="final-audio-toggle-btn"
+                    onClick={togglePlay}
+                    aria-label="Pause background song"
+                  >
+                    Pause
+                  </button>
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  className="final-audio-prompt-btn"
+                  onClick={togglePlay}
+                  aria-label="Play our song softly while reading"
+                >
+                  <span aria-hidden="true">♫</span>
+                  <span>Play our song softly while reading</span>
+                </button>
+              )}
             </div>
 
             <div className="letter-sheet">

@@ -60,7 +60,7 @@ export const GALLERY_PHOTOS = [
 export const MUSIC_META = {
   title: 'I Wanna Be Yours',
   artist: 'Arctic Monkeys',
-  audioPath: '/assets/audio/i-wanna-be-yours.mp3',
+  audioPath: '/assets/audio/i wanna be yours.mp3',
 };
 
 export const SECTION_KEYS = {
