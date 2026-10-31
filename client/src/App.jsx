@@ -10,6 +10,7 @@ import LettersSection from './sections/LettersSection';
 import OurSongSection from './sections/OurSongSection';
 import FinalEnvelopeSection from './sections/FinalEnvelopeSection';
 import { RECIPIENT_NAME } from './utils/constants';
+import { getApiUrl } from './utils/api';
 
 export default function App() {
   const audioPlayer = useAudioPlayer();
@@ -17,7 +18,7 @@ export default function App() {
 
   useEffect(() => {
     // Verify frontend-backend connectivity
-    fetch('/api/health')
+    fetch(getApiUrl('/api/health'))
       .then((res) => res.json())
       .then((data) => {
         if (data && data.status === 'ok') {
