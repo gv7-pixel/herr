@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 
 /**
  * LetterReaderModal
@@ -8,6 +9,7 @@ import React, { useEffect, useRef, useCallback } from 'react';
  * - Date header: "6 Nov 2026"
  * - Hand-crafted floral washi tape and burgundy wax seal accents
  * - Accessible keyboard & touch controls (Escape to close, Left/Right arrow to navigate)
+ * - Rendered in document.body via Portal to prevent stacking-context / overflow conflicts
  */
 export default function LetterReaderModal({
   isOpen,
@@ -21,6 +23,7 @@ export default function LetterReaderModal({
 }) {
   const modalRef = useRef(null);
   const closeBtnRef = useRef(null);
+  const sheetRef = useRef(null);
 
   const handleKeyDown = useCallback(
     (e) => {
@@ -39,9 +42,13 @@ export default function LetterReaderModal({
     [isOpen, onClose, onPrev, onNext]
   );
 
+  // Focus management & strict background scroll lock
   useEffect(() => {
     if (isOpen) {
+      const origBodyOverflow = document.body.style.overflow;
+      const origHtmlOverflow = document.documentElement.style.overflow;
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
       const triggerEl = triggerRef?.current;
 
@@ -53,7 +60,8 @@ export default function LetterReaderModal({
 
       return () => {
         clearTimeout(timer);
-        document.body.style.overflow = '';
+        document.body.style.overflow = origBodyOverflow;
+        document.documentElement.style.overflow = origHtmlOverflow;
         window.removeEventListener('keydown', handleKeyDown);
         if (triggerEl) {
           triggerEl.focus();
@@ -62,12 +70,19 @@ export default function LetterReaderModal({
     }
   }, [isOpen, handleKeyDown, triggerRef]);
 
-  if (!isOpen || !letter) return null;
+  // Reset scroll position to top when navigating to another letter
+  useEffect(() => {
+    if (isOpen && sheetRef.current) {
+      sheetRef.current.scrollTop = 0;
+    }
+  }, [isOpen, letterIndex]);
+
+  if (!isOpen || !letter || typeof document === 'undefined') return null;
 
   const currentFormatted = String(letterIndex + 1).padStart(2, '0');
   const totalFormatted = String(totalLetters).padStart(2, '0');
 
-  return (
+  const modalContent = (
     <div
       className="letter-reader-backdrop"
       onClick={onClose}
@@ -108,7 +123,7 @@ export default function LetterReaderModal({
         </div>
 
         {/* Vintage Parchment Letter Sheet */}
-        <div className="letter-parchment-sheet">
+        <div className="letter-parchment-sheet" ref={sheetRef} tabIndex={0}>
           {/* Decorative pressed floral washi tape in corner */}
           <div className="parchment-floral-tape" aria-hidden="true">
             <span className="parchment-floral-icon">🌸</span>
@@ -174,4 +189,6 @@ export default function LetterReaderModal({
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }

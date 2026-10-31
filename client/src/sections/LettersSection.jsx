@@ -10,23 +10,45 @@ import { LETTERS_DATA } from '../utils/lettersData';
  */
 export default function LettersSection() {
   const [selectedLetterIndex, setSelectedLetterIndex] = useState(null);
+  const [openingIndex, setOpeningIndex] = useState(null);
   const activeTriggerRef = useRef(null);
 
   const handleOpenLetter = (index, e) => {
-    setSelectedLetterIndex(index);
-    activeTriggerRef.current = e.currentTarget;
+    if (openingIndex !== null && openingIndex !== index) return;
+    activeTriggerRef.current = e?.currentTarget || null;
+    setOpeningIndex(index);
+
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const delay = prefersReducedMotion ? 40 : 220;
+
+    setTimeout(() => {
+      setSelectedLetterIndex(index);
+    }, delay);
   };
 
   const handleClose = () => {
     setSelectedLetterIndex(null);
+    setTimeout(() => {
+      setOpeningIndex(null);
+    }, 150);
   };
 
   const handlePrev = () => {
-    setSelectedLetterIndex((prev) => (prev > 0 ? prev - 1 : LETTERS_DATA.length - 1));
+    setSelectedLetterIndex((prev) => {
+      const nextIdx = prev > 0 ? prev - 1 : LETTERS_DATA.length - 1;
+      setOpeningIndex(nextIdx);
+      return nextIdx;
+    });
   };
 
   const handleNext = () => {
-    setSelectedLetterIndex((prev) => (prev < LETTERS_DATA.length - 1 ? prev + 1 : 0));
+    setSelectedLetterIndex((prev) => {
+      const nextIdx = prev < LETTERS_DATA.length - 1 ? prev + 1 : 0;
+      setOpeningIndex(nextIdx);
+      return nextIdx;
+    });
   };
 
   const activeLetter = selectedLetterIndex !== null ? LETTERS_DATA[selectedLetterIndex] : null;
@@ -43,10 +65,15 @@ export default function LettersSection() {
         {/* Six Interactive Envelope Cards */}
         <div className="letters-envelopes-grid" role="region" aria-label="Six interactive love letters">
           {LETTERS_DATA.map((letter, index) => {
+            const isOpening = openingIndex === index;
+            const isDimmed = openingIndex !== null && openingIndex !== index;
+
             return (
               <article
                 key={letter.id}
-                className="letter-envelope-card interactive-lift"
+                className={`letter-envelope-card interactive-lift ${
+                  isOpening ? 'is-opening' : ''
+                } ${isDimmed ? 'is-dimmed' : ''}`}
                 onClick={(e) => handleOpenLetter(index, e)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {

@@ -106,4 +106,14 @@
   --container-max: 880px;
   --container-narrow: 640px;
   --container-wide: 1080px;
+
+  /* Z-Index Hierarchy */
+  --z-base: 1;
+  --z-envelope-flap: 2;
+  --z-envelope-seal: 3;
+  --z-fixed: 100;
+  --z-modal-backdrop: 1000;
+  --z-modal: 1050;
+  --z-modal-content: 1060;
+  --z-popover: 1100;
 }
